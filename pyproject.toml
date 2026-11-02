@@ -1,0 +1,31 @@
+[project]
+name = "next-draw"
+version = "0.1.0"
+description = "Local LSTM-CRF and Laya lottery-number experiment"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{name = "enabled528"}]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "beautifulsoup4==4.14.2",
+  "curl-cffi==0.16.3",
+  "fastapi>=0.115,<1",
+  "filelock>=3.16,<5",
+  "laya==0.4.21",
+  "numpy==1.24.3",
+  "pytorch-crf==0.7.2",
+  "torch==2.15.0",
+  "transformers==5.22.1",
+  "uvicorn>=0.34,<1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["backend"]
+testpaths = ["tests"]
+addopts = "-q"

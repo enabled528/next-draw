@@ -1,0 +1,36 @@
+name: next-draw
+services:
+  next-draw:
+    image: neo-next-draw:arm64
+    build:
+      context: .
+      platforms: [linux/arm64]
+    platform: linux/arm64
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${NEXT_DRAW_PORT:-8787}:8000"
+    volumes:
+      - next-draw-data:/app/data
+    environment:
+      NEXT_DRAW_THREADS: "4"
+      NEXT_DRAW_EPOCHS: "3"
+      NEXT_DRAW_FRESHNESS_SECONDS: "21600"
+      OMP_NUM_THREADS: "4"
+      OPENBLAS_NUM_THREADS: "4"
+    mem_limit: 3g
+    cpus: 4
+    pids_limit: 128
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+volumes:
+  next-draw-data:

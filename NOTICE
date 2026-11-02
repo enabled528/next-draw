@@ -1,0 +1,28 @@
+Next Draw
+Copyright 2026 enabled528
+
+The original project source is licensed under the Apache License, Version 2.0.
+
+Architecture inspiration:
+zepen/predict_Lottery_ticket (TensorFlow LSTM + CRF experiment)
+https://github.com/zepen/predict_Lottery_ticket
+The referenced upstream checkout did not contain a LICENSE file. This project
+does not redistribute that checkout or claim to relicense its source.
+
+Decision-model dependency:
+NandhaKishorM/laya, distributed separately under Apache-2.0.
+https://github.com/NandhaKishorM/laya
+
+Public model artifacts are downloaded separately from convaiinnovations/laya,
+revision 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851 (multilingual).
+https://huggingface.co/convaiinnovations/laya
+The original terms for model weights, encoder configuration and tokenizer
+artifacts remain applicable; they are not relicensed by this project.
+
+Historical lottery facts were collected from the public 500.com datachart
+pages. Source attribution and retrieval timestamps are retained in seed JSON.
+No ownership of the underlying lottery facts or source-site materials is
+claimed. Third-party data and trademarks are not covered by the project grant.
+
+Installed third-party libraries retain their own licenses. They are resolved
+from package registries, not committed as vendored source in this repository.
